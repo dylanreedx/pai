@@ -1,3 +1,4 @@
+import {API_URL} from '@/utils/url';
 import {NextResponse} from 'next/server';
 
 export async function GET(request: Request) {
@@ -7,7 +8,7 @@ export async function GET(request: Request) {
   // Replace this URL with your laptop’s public endpoint.
   // For example, if using ngrok, it might look like:
   // https://your-ngrok-url.ngrok.io/chat/stream
-  const backendUrl = `https://4bd9-98-143-72-77.ngrok-free.app/chat/stream?message=${encodeURIComponent(
+  const backendUrl = `${API_URL}/chat/stream?message=${encodeURIComponent(
     message
   )}`;
 

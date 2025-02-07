@@ -1,3 +1,4 @@
+import {API_URL} from '@/utils/url';
 import {NextResponse} from 'next/server';
 
 export async function POST(request: Request) {
@@ -14,8 +15,7 @@ export async function POST(request: Request) {
     remoteForm.append('file', file);
 
     // Forward to your remote server’s endpoint.
-    const remoteUrl = 'https://4bd9-98-143-72-77.ngrok-free.app/upload'; // Update with your actual URL
-    const res = await fetch(remoteUrl, {
+    const res = await fetch(API_URL, {
       method: 'POST',
       body: remoteForm,
     });
